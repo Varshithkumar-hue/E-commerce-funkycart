@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %} Profile Page {% endblock title %}
+{% block body %}
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+<h1>My Profile</h1>
+
+<table class="table table-info table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Order ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Products</th>
+        <th scope="col">Amount Paid</th>
+        <th scope="col">Payment Status</th>
+        <th scope="col">Address</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Delivery Status</th>
+        <th scope="col">Delivered</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {% for i in items %}
+
+        <tr>
+            <th scope="row"> {{i.oid}} </th>
+            <td> {{i.name}} </td>
+            <td> {{i.items_json}} </td>
+            <td> {{i.amount}} </td>
+            <td> {{i.paymentstatus}} </td>
+            <td> {{i.address1}} </td>
+            <td> {{i.phone}} </td>
+           
+        
+        {% endfor %}%}
+
+
+    </tbody>
+</table>
+      </div>
+    </section>
+
+{% endblock body %}
